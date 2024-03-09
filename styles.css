@@ -1,0 +1,264 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color:rgb(44, 40, 40);
+    font-family: "Chakra Petch", sans-serif;
+}
+p{
+    padding: 0;
+    margin: 0;
+}
+header{
+    background-color: rgb(44, 40, 40);
+    position: fixed;
+    left: 0;
+    right: 0;
+    top:0;
+    
+}
+header .container{
+    width: 95%;
+    margin: 10px auto;
+    color: rgb(193, 169, 169);
+    display: flex;
+    justify-content: space-between;
+    
+    
+}
+header .container .site-name{
+    background: linear-gradient(45deg, #ff0000, #00ff00, #0000ff);
+    font-family: "Chakra Petch", sans-serif;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 48px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+header .container .menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+}
+.menu .menu-item a{
+    color: rgb(160, 155, 155);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+.menu .menu-item a:hover{
+    text-decoration: underline;
+    color: rgb(228, 209, 209);
+    font-size: 20px;
+}
+.dropdown-menu-button{
+    display: none;
+    align-items: center;
+    
+    cursor: pointer;
+    
+}
+.minus-holder{
+    width: 40px;
+    height: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;
+    border-radius: 100%;
+    transition: all 0.3s;
+
+}
+.minus-holder:active{
+    background-color: rgb(81, 79, 79);
+}
+.minus{
+    width: 20px;
+    height: 2px;
+    background-color: rgb(160, 155, 155);
+}
+.toggle-menu{
+    position: absolute;
+    background-color: white;
+    
+    width: 100%;
+    left: 0;
+    top: 100%;
+    
+    height: 0;
+    visibility: hidden;
+    transition: all 0.2s;
+}
+.dropdown-menu-button.active ~ .toggle-menu{
+    visibility: visible;
+    height:150px;
+    
+}
+
+.toggle-menu-content{
+    width: 95%;
+    height: 100%;
+    margin: 0 auto;
+    opacity: 0;
+    transition: all 0.2s;
+    
+}
+.dropdown-menu-button.active ~ .toggle-menu .toggle-menu-content{
+    opacity: 1;
+}
+.toggle-menu .toggle-menu-content .menu-item{
+    height: 20%;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s;
+}
+.toggle-menu .toggle-menu-content .menu-item:hover{
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-left: 5px;
+    color: white;
+}
+.toggle-menu .toggle-menu-content .menu-item a{
+    text-decoration: none;
+    color: rgb(81, 79, 79);
+}
+main{
+    padding-top: 70px;
+    width: 90%;
+    height: 100%;
+    margin-left: 23.250px;
+    margin-right: 50px;
+    
+}
+#about .container{
+    
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+#about .container .about{
+    width: 700px;
+    color: white;
+    font-style: italic;
+    font-size: 30px;
+}
+.extra-content{
+    
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+}
+.expanded {
+    
+    max-height: 1000px;
+}
+#portfolio{
+    margin-top: 50px;
+}
+#portfolio .container{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: white;
+}
+#portfolio .container .container-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+}
+
+#portfolio .container .container-grid .item .video-container iframe{
+    border-radius: 10px;
+    height: 204px;
+}
+
+.description ul{
+    padding-left: 10px;
+}
+.description ul li{
+    font-style: italic;
+    font-size: 13px;
+}
+#contacts{
+    width: 50px;
+    position: fixed;
+    right: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+#contacts .container{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+#contacts .container a i {
+    font-size: 30px;
+}
+#contacts .container a i.bxl-linkedin{
+    color: rgb(11, 186, 240);
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    padding-right: 23.250px;
+    text-align: center;
+    
+
+}
+footer .container .contact-item{
+    width: 100%;
+    display: flex;
+    justify-content:center;
+    gap: 10px;
+}
+@media (max-width:600px) {
+    header .container .menu{
+        display: none;
+    }
+    .dropdown-menu-button{
+        display: flex;
+    }
+    header .container .site-name{
+        font-size: 24px;
+    }
+}
+@media (min-width:600px){
+    .toggle-menu{
+        display: none;
+    }
+}
+
+@media (max-width:750px){
+    main{
+        padding-top: 70px;
+        width: 95%;
+        height: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        
+    }
+    #contacts{
+        display: none;
+    }
+    #about .container .about{
+        width: 100%;
+        color: white;
+        font-style: italic;
+        font-size: 25px;
+    }
+}
+@media (min-width:550px) and (max-width:1000px){
+    #portfolio .container .container-grid{
+        grid-template-columns: 1fr 1fr;
+        
+    }
+}
+@media (max-width:550px){
+    #portfolio .container .container-grid{
+        grid-template-columns: 1fr;
+        
+    }
+}
+html {
+    scroll-behavior: smooth;
+}
